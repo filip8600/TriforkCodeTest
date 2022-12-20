@@ -9,7 +9,7 @@ var queueHandler = new QueueHandler(connectionFactory, messageFactory);
 
 while (true)
 {
-    Message message = messageFactory.produceMessage(DateTime.Now);
+    Message message = messageFactory.produceMessage(DateTime.UtcNow);
     string stringMessage = JsonSerializer.Serialize(message);
     queueHandler.sendMessage(stringMessage);
     Thread.Sleep(1000);
