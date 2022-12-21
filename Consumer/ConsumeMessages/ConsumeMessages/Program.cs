@@ -15,7 +15,8 @@ var app = builder.Build();
 
 
 IHandleMessages messageHandler = new HandleMessages(new MessageContext(@"Server=localhost;Database=master;Trusted_Connection=True;"));
-HandleMessageQueue queueHandler=new HandleMessageQueue(messageHandler);
+var t = new Task(() => new HandleMessageQueue(messageHandler));
+t.Start();
 
 app.Run();
 

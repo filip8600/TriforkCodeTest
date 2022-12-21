@@ -32,7 +32,7 @@ namespace UnitTest
         [Fact]
         public void ConstructorCreateQueue()
         {
-            fakeConnection.Received(1).CreateConnection().CreateModel().BasicPublish("","");
+            fakeConnection.Received(1).CreateConnection().CreateModel().BasicRecoverOk();
         }
         [Fact]
         public void MessageIsSent()

@@ -13,7 +13,7 @@ namespace ConsumeMessages.Model
             _context = context;
         }
 
-        public async void Handle(string JsonMessage, ISendMessages sender)
+        public void Handle(string JsonMessage, ISendMessages sender)
         {
             Message? message = JsonSerializer.Deserialize<Message>(JsonMessage);
             if (message == null)
