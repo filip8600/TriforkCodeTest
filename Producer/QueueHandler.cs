@@ -7,7 +7,7 @@ namespace SendReservation
     {
         private readonly IConnection connection;
         private readonly IModel channel;
-        public QueueHandler(IAsyncConnectionFactory connectionFactory, IProduceMessage messageFactory)
+        public QueueHandler(IAsyncConnectionFactory connectionFactory)
         {
             connection = connectionFactory.CreateConnection();
 

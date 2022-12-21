@@ -5,7 +5,7 @@ using System.Text.Json;
 
 var connectionFactory = new ConnectionFactory() { HostName = "localhost" };
 IProduceMessage messageFactory=new MessageFactory();
-var queueHandler = new QueueHandler(connectionFactory, messageFactory);
+var queueHandler = new QueueHandler(connectionFactory);
 
 while (true)
 {
